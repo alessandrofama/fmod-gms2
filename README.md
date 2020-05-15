@@ -74,7 +74,7 @@ FMOD_SetListener3DPosition(double listener, double posX, double posY, double pos
 
 #### Loading a bank
 ```
-FMOD_LoadBank(char* bankPath, double flags);
+FMOD_LoadBank(string bankPath, double flags);
 ```
 `bankPath` is the path to the bank file. `flags` can be:
 
@@ -91,7 +91,7 @@ FMOD_UnloadBank(double index);
 
 #### Create an instance
 ```
-FMOD_CreateInstance(char* eventPath);
+FMOD_CreateInstance(string eventPath);
 ```
 returns an index to the EventInstance.
 
@@ -125,7 +125,7 @@ FMOD_Set3DAttributes(double index, double posX, double posY, double posZ, double
 
 #### Playing a simple 2D event (no spatializer)
 ```
-FMOD_PlayOneShot2D(char* eventPath);
+FMOD_PlayOneShot2D(string eventPath);
 ```
 Will automatically call EventInstance::release after starting. No need to take care of the instance.
 
@@ -185,25 +185,25 @@ Returns the RMS value of an instance.
 
 #### Get a global parameter value by name 
 ```
-FMOD_GetGlobalParameterByName(char* parameterName);
+FMOD_GetGlobalParameterByName(string parameterName);
 ```
 Takes the parameter name and returns the value.
 
 #### Set a global parameter value by name 
 ```
-FMOD_SetGlobalParameterByName(char* parameterName, double value, double ignoreSeekSpeed);
+FMOD_SetGlobalParameterByName(string parameterName, double value, double ignoreSeekSpeed);
 ```
 Returns -1 if it failed, 0 if succeded.
 
 #### Get a local parameter value by name 
 ```
-FMOD_GetParameterByName(double instanceIndex, char* parameterName);
+FMOD_GetParameterByName(double instanceIndex, string parameterName);
 ```
 Takes the instance index and the parameter name and returns its value.
 
 #### Set a local parameter value by name 
 ```
-FMOD_SetParameterByName(double instanceIndex, char* parameterName, double value, double ignoreSeekSpeed);
+FMOD_SetParameterByName(double instanceIndex, string parameterName, double value, double ignoreSeekSpeed);
 ```
 Returns -1 if it failed, 0 if succeded.
 
@@ -211,7 +211,7 @@ Returns -1 if it failed, 0 if succeded.
 
 #### Getting a bus
 ```
-FMOD_GetBus(char* busPath);
+FMOD_GetBus(string busPath);
 ```
 Takes the bus path and returns an index to that bus. Use it to get or set the bus volume.
 
@@ -231,7 +231,7 @@ Returns -1 if failed, 0 if succeeded.
 
 #### Getting a VCA
 ```
-FMOD_GetVCA(char* vcaPath);
+FMOD_GetVCA(string vcaPath);
 ```
 Takes the VCA path and returns an index to that VCA. Use it to get or set the VCA volume.
 
