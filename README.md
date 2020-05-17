@@ -18,15 +18,14 @@ This extension is work-in-progress, works with Windows in the editor (Run mode),
 
 ## Installation
 
-Import the .yymp file to your Game Maker Studio 2 Project, download the FMOD libraries (fmod.dll  and fmodstudio.dll) from fmod.com (Windows API version 2.01.00 x86) and add the files to the fmod-gms2 extensions folder.
+Import the .yymp file to your Game Maker Studio 2 Project, download the FMOD libraries (fmod.dll and fmodstudio.dll) from fmod.com (Windows API version 2.01.00 x86) and add the files to the fmod-gms2 extensions folder.
 
 ## Building
-Add 
-- fmod.dll
-- fmod_vc.lib
-- fmodstudio.dll
-- fmodstudio_vc.lib 
-to the <b>lib</b> folder in the solution directory and it should build.
+This project uses SCons. Navigate to the folder containing the SConstruct file and run:
+```
+scons platform=windows target=release fmod_api="C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows" 
+```
+Replace the fmod_api path with the path of your FMOD API installation.
 
 ## Usage
 
