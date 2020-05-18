@@ -10,7 +10,11 @@
 #ifndef FMODGMS2_HPP
 #define FMODGMS2_HPP
 
+#if !defined( _MSC_VER)
+#define GMexport extern "C" __attribute__((visibility("default")))
+#else
 #define GMexport extern "C" __declspec (dllexport)
+#endif
 
 #include "fmod_studio.hpp"	
 #include "fmod.hpp"

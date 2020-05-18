@@ -20,3 +20,7 @@ bld/
 *.idb
 
 *.obj
+
+*.DS_Store
+
+*.os

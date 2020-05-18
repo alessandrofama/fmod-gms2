@@ -14,8 +14,6 @@
 
 #include "fmodgms2.hpp"
 
-static int beat;
-
 FMOD::Studio::System* studioSystem = NULL;
 FMOD::System* coreSystem = NULL;
 
@@ -230,7 +228,7 @@ GMexport double FMOD_StopInstance(double index, double stopMode)
 {
 	std::size_t i = (std::size_t)round(index);
 
-	if (instanceList.count(i) != NULL && instanceList.count(i) == 1)
+	if (instanceList.count(i) == 1)
 	{
 		auto result = instanceList[i]->stop((FMOD_STUDIO_STOP_MODE)static_cast<int>(stopMode));
 
@@ -247,7 +245,7 @@ GMexport double FMOD_ReleaseInstance(double index)
 {
 	std::size_t i = (std::size_t)round(index);
 
-	if (instanceList.count(i) != NULL && instanceList.count(i) == 1)
+	if (instanceList.count(i) == 1)
 	{
 		auto result = instanceList[i]->release();
 
@@ -569,11 +567,11 @@ GMexport double FMOD_GetParameterByName(double index, char* parameterName)
 		return -1;
 	}
 
-	float value = NULL;
-	float finalValue = NULL;
+	float value = 0.f;
+	float finalValue = 0.f;
 	auto result = instanceList[i]->getParameterByName(parameterName, &value, &finalValue);
 
-	if (result != FMOD_OK || finalValue == NULL)
+	if (result != FMOD_OK)
 	{
 		return -1;
 	}
