@@ -17,8 +17,6 @@ opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
 opts.Add(PathVariable('fmod_api', 'The FMOD API path', '', PathVariable.PathAccept))
 opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'bin/'))
 opts.Add(PathVariable('target_name', 'The library name.', 'fmodgms2', PathVariable.PathAccept))
-opts.Add(EnumVariable('bits', "Bits target",
-                      '32', ['32', '64']))
 
 opts.Update(env)
 
@@ -33,10 +31,10 @@ if env['platform'] == '':
     print("No valid target platform selected.")
     quit()
 
-if env['platform'] == "osx":
+fmod_api_core_headers_path = env['fmod_api'] + "/api/core/inc/"
+fmod_api_studio_headers_path = env['fmod_api'] + "/api/studio/inc/"
 
-    fmod_api_core_headers_path = env['fmod_api'] + "/api/core/inc/"
-    fmod_api_studio_headers_path = env['fmod_api'] + "/api/studio/inc/"
+if env['platform'] == "osx":
 
     fmod_api_core_libs_path = env['fmod_api'] + "/api/core/lib/"
     fmod_api_studio_libs_path = env['fmod_api'] + "/api/studio/lib/"
@@ -45,8 +43,6 @@ if env['platform'] == "osx":
     fmod_library = "libfmod"
     fmodstudio_library = "libfmodstudio"
     fmodstudioL_library = "libfmodstudioL"
-
-   # env.Append( RPATH = env.Literal(os.path.join('\\$$ORIGIN', os.pardir)))
 
     env['target_path'] += 'osx/'
     if env['target'] in ('debug', 'd'):
@@ -65,15 +61,8 @@ if env['platform'] == "osx":
 
 elif env['platform'] == "windows":
 
-    fmod_api_core_headers_path = env['fmod_api'] + "/api/core/inc/"
-    fmod_api_studio_headers_path = env['fmod_api'] + "/api/studio/inc/"
-
-    if env['bits'] == "32":
-        fmod_api_core_libs_path = env['fmod_api'] + "/api/core/lib/x86/"
-        fmod_api_studio_libs_path = env['fmod_api'] + "/api/studio/lib/x86/"
-    else:
-        fmod_api_core_libs_path = env['fmod_api'] + "/api/core/lib/x64/"
-        fmod_api_studio_libs_path = env['fmod_api'] + "/api/studio/lib/x64/"
+    fmod_api_core_libs_path = env['fmod_api'] + "/api/core/lib/x86/"
+    fmod_api_studio_libs_path = env['fmod_api'] + "/api/studio/lib/x86/"
 
     fmodL_library = "fmodL_vc"
     fmod_library = "fmod_vc"
