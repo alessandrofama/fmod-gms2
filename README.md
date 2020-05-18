@@ -25,7 +25,7 @@ This project uses SCons. Navigate to the folder containing the SConstruct file a
 ```
 scons platform=windows target=release fmod_api="C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows" 
 ```
-Replace the fmod_api path with the path of your FMOD API installation.
+Replace platform (windows, osx) and the fmod_api path with the path of your FMOD API installation.
 
 ## Usage
 
