@@ -4,7 +4,7 @@
 This extension adds bindings to the FMOD Studio API (version 2.01.00) for Game Maker Studio 2. 
 I originally wanted to update the bindings created by [mstop4](https://github.com/mstop4/FMODGMS), but decided to rewrite the extension, adding support for the Studio API and removing support for the low-level API. Thanks to mstop4 to the useful insight in creating a Game Maker extension.
 
-This extension is work-in-progress, works with Windows in the editor (Run mode), but haven't tested on any final build. Pull requests are welcome! 😊
+This extension is work-in-progress, works with Windows and macOS in the editor (Run mode), but haven't tested on any final build. Pull requests are welcome! 😊
 
 ## Table of Contents 
 
@@ -18,7 +18,7 @@ This extension is work-in-progress, works with Windows in the editor (Run mode),
 
 ## Installation
 
-Import the .yymp file to your Game Maker Studio 2 Project, download the FMOD libraries (fmod.dll and fmodstudio.dll) from fmod.com (Windows API version 2.01.00 x86) and add the files to the fmod-gms2 extensions folder.
+Import the .yymp file (from the releases tab to your Game Maker Studio 2 Project, Download the FMOD Studio API (2.01.01 / x86) and also add fmodstudio.dll/libfmodstudio.dylib and fmod.dll/libfmod.dll to the fmod-gms2 extensions folder.
 
 ## Building
 This project uses SCons. Navigate to the folder containing the SConstruct file and run:
@@ -258,6 +258,12 @@ FMOD_Sys_Initialize(FMOD_OUTPUTTYPE_AUTODETECT, 32, 128, FMOD_STUDIO_INIT_LIVEUP
 ```
 FMOD_LoadBank("Audio Banks/Desktop/Master.bank", FMOD_STUDIO_LOAD_BANK_NORMAL);
 FMOD_LoadBank("Audio Banks/Desktop/Master.strings.bank", FMOD_STUDIO_LOAD_BANK_NORMAL);
+```
+The path on Windows is relative to the "Included" directory in GMS2's resources. Add the banks the included resources. Note: on macOS you have to add working_directory before the path. Also whitespaces will be removed and uppercase letter will be transformer to lowercase one's (?!). The same code would be:
+
+```
+FMOD_LoadBank(working_directory + "audiobanks/desktop/master.bank", FMOD_STUDIO_LOAD_BANK_NORMAL);
+FMOD_LoadBank(working_directory + "audiobanks/desktop/master.strings.bank", FMOD_STUDIO_LOAD_BANK_NORMAL);
 ```
 
 ### Playing a 3d sound by manually managing instances
