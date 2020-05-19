@@ -6,6 +6,8 @@ I originally wanted to update the bindings created by [mstop4](https://github.co
 
 This extension is work-in-progress, works with Windows and macOS in the editor (Run mode), but haven't tested on any final build. Pull requests are welcome! 😊
 
+Note: FMOD is not free, visit https://www.fmod.com/licensing for more info about licensing.
+
 ## Table of Contents 
 
 [Installation](#installation)
