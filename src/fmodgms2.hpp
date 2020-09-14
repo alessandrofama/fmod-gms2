@@ -1,12 +1,3 @@
-/*--------------------------------------------------------
-//  fmodgms2.hpp
-//
-//  GML bindings to the FMOD Studio API for
-//  GameMaker Studio 2.
-//
-//  FMOD Studio version: 2.01.00
-----------------------------------------------------------*/
-
 #ifndef FMODGMS2_HPP
 #define FMODGMS2_HPP
 

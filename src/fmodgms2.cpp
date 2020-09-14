@@ -1,14 +1,3 @@
-/*--------------------------------------------------------
-//  fmodgms2.cpp
-//
-//  FMODGMS2 v.0.1.0
-//
-//  GML bindings to the FMOD Studio API for
-//  GameMaker Studio 2.
-//
-//  FMOD Studio version: 2.01.00
-----------------------------------------------------------*/
-
 #ifndef FMODGMS2_CPP
 #define FMODGMS2_CPP
 
@@ -52,7 +41,6 @@ GMexport double FMOD_Sys_Create()
 
 GMexport double FMOD_Sys_Initialize(double outputType, double realChannels, double virtualChannels, double studioInitFlags)
 {
-
 	auto result = coreSystem->setOutput((FMOD_OUTPUTTYPE)static_cast<int>(outputType));
 
 	if (result != FMOD_OK)
