@@ -20,7 +20,13 @@ Note: FMOD is not free, visit https://www.fmod.com/licensing for more info about
 
 ## Installation
 
-Extract the .zip file from the releases on GitHub to the ``extension`` directory of your Game Maker Studio 2.3 project. Download the FMOD Studio API (2.01.03 / x86) and also add release versions of fmodstudio.dll/libfmodstudio.dylib and fmod.dll/libfmod.dll to the fmodgms2 extensions folder.
+1. Import the fmodgms2.ymps file as a local package to your Game Maker Studio project (Tools->Import Local Package. In the following import window, click on the Extension on the left and then on the Add button in the middle of the popup. Import the package.
+
+2. A new folder named `fmodgms2` will automatically be created inside your `extensions` directory. 
+
+3. Copy the required fmodgms2.dll or libfmodgms2.dylib file to that folder.
+
+4. Download the FMOD Studio API (2.01.03 / x86) and add the release versions of fmodstudio.dll/libfmodstudio.dylib and fmod.dll/libfmod.dll to the fmodgms2 extensions folder.
 
 ## Building
 This project uses SCons. Navigate to the folder containing the SConstruct file and run:
