@@ -20,7 +20,9 @@ Note: FMOD is not free, visit https://www.fmod.com/licensing for more info about
 
 ## Installation
 
-1. Import the fmodgms2.ymps file as a local package to your Game Maker Studio project (Tools->Import Local Package. In the following import window, click on the Extension on the left and then on the Add button in the middle of the popup. Import the package.
+If you already have the integration installed, please remove the fmodgms2 folder in the extensions directory of your Game Maker Studio project first before updating.
+
+1. Import the fmodgms2.ymps file as a local package to your Game Maker Studio project (Tools->Import Local Package). In the following import window, click on the Extension on the left and then on the Add button in the middle of the popup. Import the package.
 
 2. A new folder named `fmodgms2` will automatically be created inside your `extensions` directory. 
 
