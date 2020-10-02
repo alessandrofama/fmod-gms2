@@ -1,10 +1,9 @@
 
 # fmod-gms2
 
-This extension adds bindings to the FMOD Studio API (version 2.01.00) for Game Maker Studio 2. 
-I originally wanted to update the bindings created by [mstop4](https://github.com/mstop4/FMODGMS), but decided to rewrite the extension, adding support for the Studio API and removing support for the low-level API. Thanks to mstop4 to the useful insight in creating a Game Maker extension.
+This extension adds bindings to the FMOD Studio API (version 2.01.03) for Game Maker Studio 2. 
 
-This extension is work-in-progress, works with Windows and macOS in the editor (Run mode), but haven't tested on any final build. Pull requests are welcome! 😊
+This extension is work-in-progress, works with Windows and macOS in the editor (Run mode), but haven't tested on any final build (my license expired). Pull requests are welcome! 😊
 
 Note: FMOD is not free, visit https://www.fmod.com/licensing for more info about licensing.
 
