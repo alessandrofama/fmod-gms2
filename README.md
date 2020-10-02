@@ -32,6 +32,7 @@ If you already have the integration installed, please remove the fmodgms2 folder
 ## Building
 This project uses SCons. Navigate to the folder containing the SConstruct file and run:
 ```
+mkdir bin
 scons platform=windows target=release fmod_api="C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows" 
 ```
 Replace platform (windows, osx) and the fmod_api path with the path of your FMOD API installation.
